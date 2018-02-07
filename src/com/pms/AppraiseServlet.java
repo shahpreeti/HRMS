@@ -28,7 +28,7 @@ public class AppraiseServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		HttpSession session=request.getSession(false);  
 		int source=0;
-		
+		String name,curr_phase;
         if(session!=null)
         {  
         	if(session.getAttribute("name")!=null)
@@ -37,6 +37,7 @@ public class AppraiseServlet extends HttpServlet {
 				AppraiseBean abean2=new AppraiseBean();		//bean for viewing form filled by subordinate
 				SaveAppraiseBean sbean=new SaveAppraiseBean();
 				source=(int) session.getAttribute("source");
+				name=(String) session.getAttribute("name");
 				abean.setQuery();
 				abean2.setQuery();
 				if(source==3)
@@ -46,6 +47,7 @@ public class AppraiseServlet extends HttpServlet {
 					abean.setPhaseid(3);
 					abean2.setApprempid(id);
 					abean2.setPhaseid(1);
+					abean.setEmp_name(request.getParameter("sub_apprempname"));
 				}
 				else if(source==2)
 				{
@@ -54,12 +56,15 @@ public class AppraiseServlet extends HttpServlet {
 					abean.setPhaseid(2);
 					abean2.setApprempid(id);
 					abean2.setPhaseid(1);
+					abean.setEmp_name(request.getParameter("sub_apprempname"));
 				}
 				else if(source==1)
 				{
 					int apprempid=(int) session.getAttribute("appr_empid");
 					abean.setApprempid(apprempid);
 					abean.setPhaseid(1);
+					abean.setEmp_name(name);
+					System.out.println(abean.getEmp_name());
 				}
 				request.setAttribute("abean",abean);
 				request.setAttribute("sbean",sbean);

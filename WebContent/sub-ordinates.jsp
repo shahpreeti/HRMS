@@ -53,7 +53,7 @@ for(int i=0;i<len;i++)
 	<td>..</td>
 	<td><%=sub_list[i][2]%></td>
 	<%if (current_phase>=phase) {%>
-	<td><a href="AppraiseServlet?sub_apprempid=<%=sub_list[i][0]%>">Edit</a></td>
+	<td><a href="AppraiseServlet?sub_apprempid=<%=sub_list[i][0]%>&sub_apprempname=<%=sub_list[i][4]%>&curr_phase=<%=sub_list[i][2]%>">Edit</a></td>
 	<%} else {%>
 	<td>Edit</td> <%} %>
 	</tr>	

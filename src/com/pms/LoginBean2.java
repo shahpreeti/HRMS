@@ -92,14 +92,12 @@ public void connectDB()
 }
 public static boolean checkPassword(String password_plaintext, String stored_hash) {
 	boolean password_verified = false;
-return true;
-	
-/*	if(null == stored_hash || !stored_hash.startsWith("$2a$"))
+	if(null == stored_hash || !stored_hash.startsWith("$2a$"))
 		//throw new java.lang.IllegalArgumentException("Invalid hash provided for comparison");
 		return false;
 	password_verified = BCrypt.checkpw(password_plaintext, stored_hash);
 
-	return(password_verified);*/
+	return(password_verified);
 }
 public String[][] getMenu() {
 	return menu;

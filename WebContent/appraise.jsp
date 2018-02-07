@@ -22,7 +22,6 @@ out.print(session.getAttribute("name"));
 SaveAppraiseBean sbean=(SaveAppraiseBean)request.getAttribute("sbean");
 AppraiseBean abean=(AppraiseBean)request.getAttribute("abean");
 int apprempid=abean.getApprempid();
-out.print("\n\nDisplaying form of employee "+abean.getApprempid());
 String[] secname=abean.getSections();
 String[][] allforms=abean.getAllForms();
 int len=secname.length;
@@ -32,7 +31,20 @@ int i=0,j=0,k=0;
 String status=sbean.getAppraiseStatus();
 int apprstatus=Integer.parseInt(allforms[0][8]);
 Integer source=(Integer) session.getAttribute("source");
-%>
+int curr_phaseid=Integer.parseInt(allforms[0][11]);
+String curr_phase;
+switch(curr_phaseid)
+{
+case 1:curr_phase="Self Appraisal Phase";break;
+case 2:curr_phase="Appraiser Phase";break;
+case 3:curr_phase="Reviewer Phase";break;
+case 4:curr_phase="HR Phase";break;
+case 5:curr_phase="Finalized";break;
+default:curr_phase="...";
+}
+if(curr_phaseid!=1){%>
+<br><br><label>Employee name : <%=abean.getEmp_name() %></label><%} %>
+<br><br><label>Current Phase :	<%=curr_phase%></label>
 <div><%=status %></div>
 
 <div class="tab" id="tabs">
