@@ -1,0 +1,13 @@
+table, th, td {
+    border: 1px solid black;
+    text-align:center;
+}
+td{
+	width:100px;
+}
+#sub_list
+{
+	
+	margin-left:350px;
+	margin-top:100px;
+}

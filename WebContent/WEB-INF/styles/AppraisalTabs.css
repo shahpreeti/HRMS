@@ -1,0 +1,67 @@
+.tab {
+    overflow: hidden;
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-right: 200px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+	border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+#formsections
+{
+    margin-left: 150px;
+    margin-right: 600px;
+}
+.formsection
+{
+	margin-left: 150px;
+    margin-right: 100px;
+   	display:none;
+   	border: 1px solid #ccc;
+}
+#formsection0
+{
+	
+	display:block;
+	
+}
+#indicator
+{
+	margin-left: 150px;
+    margin-right: 200px;	
+   display:none;
+}
+#submission
+{
+	text-align: center;
+	display:none;
+	
+}
+.indicator_row
+{
+	display:none;
+}
+#filledBySub
+{
+	margin-left: 550px;
+	
+}
+.selfdata
+{
+	display:none;
+	
+}
